@@ -23,8 +23,31 @@
     align-self: flex-start;
   }
   .input-box {
+    display: flex;
+    justify-content: center; 
     padding: 10px;
     background-color: #eaeaea;
+  }
+  .input-box form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .input-box input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 20px; /* Rounded corners for input box */
+    border-bottom-left-radius: 20px; /* Rounded corners for input box */
+  }
+  .input-box button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-top-right-radius: 20px; /* Rounded corners for send button */
+    border-bottom-right-radius: 20px; /* Rounded corners for send button */
+    cursor: pointer;
   }
   .from-me {
     align-self: flex-end;

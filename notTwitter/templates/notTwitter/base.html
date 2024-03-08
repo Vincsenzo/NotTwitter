@@ -95,7 +95,8 @@
       }
 
       .post {
-        width: 500px;
+        width: 100%;
+        max-width: 500px;
         padding: 20px;
         margin-bottom: 15px;
         border-radius: 10px;
@@ -133,7 +134,8 @@
       }
 
       .logout-message {
-        width: 500px;
+        width: 100%;
+        max-width: 500px;
         padding: 20px;
         margin-bottom: 15px;
         border-radius: 10px;
@@ -186,6 +188,12 @@
         background-color: #1873cc;
         cursor: pointer;
       }
+      @media screen and (max-width: 600px) {
+        .post, .logout-message{
+            width: 90%; /* Adjust width for smaller screens */
+            max-width: none; /* Remove maximum width for smaller screens */
+        }
+    }
     </style>
   </head>
   <body>
