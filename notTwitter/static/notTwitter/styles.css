@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    background-color: rgb(231, 244, 255);
+    font-weight: 400;
+    font-family: 'Varela Round';
+}
+
+/* ---navabr--- */
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: white;
+    font-family: 'Varela Round';
+}
+
+.logo a {
+    float: left;
+    padding: 5px 0;
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: xx-large;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    position: relative;
+}
+
+nav ul li a {
+    color: gray;
+    text-decoration: none;
+    font-size: large;
+}
+
+nav a:hover {
+    color: dodgerblue;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: dodgerblue;
+    
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ---main body --- */
+
+main {
+    padding: 20px;
+}
+
+.create-post {
+    text-decoration: none;
+    color: dodgerblue;
+    font-family: 'Varela Round';
+}
+
+.create-post:hover {
+    color: darkblue;
+}
+
+.post {
+    width: 500px; 
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px; 
+    border: 1px solid #ccc; 
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-family: 'Varela Round';
+}
+
+.container-post {
+    display: flex;
+}
+
+.username {
+    font-weight: 1000;
+}
+
+.username a {
+    text-decoration: none;
+    color: royalblue;
+}
+
+.username a:hover {
+    color: dodgerblue;
+}
+
+.time {
+    padding-left: 10px;
+    color: gray;
+    font-weight: 100;
+}
+
+.logout-message {
+    width: 500px; 
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px; 
+    border: 2px solid red;
+    background-color: #ffdb8c; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-family: 'Varela Round';
+    color: red;
+}
+
+/* ---image--- */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+/* ---make a post page--- */
+
+.make-post {
+    font-size: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+.make-post-form-div {
+    width: 100%;
+    text-align: center;
+}
+
+.make-post-button {
+    background-color: dodgerblue;
+    border: none;
+    color: white;
+    font-family: 'Varela Round';
+    font-size: large;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.make-post-button:hover {
+    background-color: #1873CC;
+    cursor: pointer;
+}
+
+/* ---log in page--- */
+
+.login-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Varela Round';
+}
+
+.login-container {
+    text-align: center;
+}
+
+.login-container input {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    width: 230px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.login-container button {
+    display: block;
+    padding: 12px;
+    margin: 15px ;
+    width: 220px;
+    box-sizing: border-box;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #1873CC;
+}
+
+.error-message-div {
+    display: block;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 2px solid red;
+    background-color: #ffdb8c; 
+    width: 220px;
+    font-size: 14px;
+}

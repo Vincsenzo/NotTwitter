@@ -1,0 +1,27 @@
+{% extends "notTwitter/base.html" %}
+{% block content %}
+
+<main>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="logout-message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <div class="post"><a class="create-post" href="{% url "notTwitter:make_post" %}">+ create post</a></div>
+    {% for post in paginate_posts %}
+    <div class="post">
+        <div class="container-post">
+            <div class="username"><a href="#">{{ post.user.username }}</a></div>
+            <div class="time">{{ post.created }}</div>
+        </div>
+        {{ post.post_text }}
+        {% if post.image %}
+        <img src="{{ post.image.url }}">
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    {% include "notTwitter/pagination.html" %}
+</main>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+<header>
+    <div class="container">
+      <div class="logo"><a href="{% url "notTwitter:index" %}">!Twitter</a></div>
+
+      <nav>
+        <ul>
+          <li><a href="{% url "notTwitter:index" %}">Home</a></li>
+          <li><a href="{% url "messaging:messages" %}">Messages</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url "users:logout" %}">Log out</a></li>
+          {% else %}
+          <li><a href="{% url "users:login" %}">Log in</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>

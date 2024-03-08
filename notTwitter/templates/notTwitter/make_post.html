@@ -1,0 +1,13 @@
+{% extends "notTwitter/base.html" %}
+{% block content %}
+
+<div class="make-post">Make a post</div>
+
+<div class="make-post-form-div">
+    <form class="make-post-form" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="make-post-button" type="submit">Create post</button>
+    </form>
+</div>
+{% endblock content %}

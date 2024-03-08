@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging App</title>
+</head>
+<body>
+    <header>
+        <div style="padding: 10px; font-size: x-large;">
+            <a style="text-decoration: none;" href="{% url "notTwitter:index" %}">🔙</a>
+            | Group chat</div>
+    </header>
+    <main>
+    {% block content %}{% endblock content %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static "notTwitter/styles.css" %}">
+<link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet"/>
+
+<body class="login-body">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="login-container">
+            <input type="text" placeholder="Username" name="username">
+            <input type="password" placeholder="Password" name="password">
+            <small>If you don't have an account <a href="{% url "users:register_user" %}">Sign Up</a></small>
+            {% if messages %}
+                {% for message in messages %}
+                <div class="error-message-div">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <button type="submit">Log in</button>
+        </div>
+    </form>
+</body>

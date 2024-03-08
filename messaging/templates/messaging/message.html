@@ -1,0 +1,54 @@
+{% include "messaging/base.html" %} {% block content %}
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse; /* Reverse order of children */
+  }
+  .message {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    align-self: flex-start;
+  }
+  .input-box {
+    padding: 10px;
+    background-color: #eaeaea;
+  }
+  .from-me {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+</style>
+
+<div class="chat-box">
+  {% for message in messages %}
+  <div
+  class="{% if message.sender_name == current_user.username %}from-me{% else %}message{% endif %}"
+  >
+    {{message.sender_name}}: {{message}}
+  </div>
+  {% endfor %}
+  {% if messages.count > 65 %}
+  <a href="?all=true" style="display: table; margin: 0 auto;">load all messages</a>
+  {% endif %}
+</div>
+
+<div class="input-box">
+  {% include "messaging/message_form.html" %}
+</div>
+{% endblock content %}

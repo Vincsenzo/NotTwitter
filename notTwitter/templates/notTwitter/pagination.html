@@ -1,0 +1,13 @@
+<span style="display: table; margin: 0 auto;">
+{% if paginate_posts.has_previous %}
+    <a href="?page=1">&laquo; first</a> |
+    <a href="?page={{ paginate_posts.previous_page_number }}">previous</a>
+{% endif %}
+
+<span>Page {{ paginate_posts.number }} of {{ paginate_posts.paginator.num_pages }}</span>
+
+{% if paginate_posts.has_next %}
+    <a href="?page={{ paginate_posts.next_page_number }}">next</a> |
+    <a href="?page={{ paginate_posts.paginator.num_pages }}">last &raquo;</a>
+{% endif %}
+</span>
