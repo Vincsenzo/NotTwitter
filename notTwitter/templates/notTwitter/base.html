@@ -8,11 +8,187 @@
       rel="stylesheet"
     />
     <title>notTwitter</title>
-    {% load static %} 
-    <link rel="stylesheet" type="text/css" href="{% static "notTwitter/styles.css" %}">
+    <style>
+      body {
+        margin: 0;
+        background-color: rgb(231, 244, 255);
+        font-weight: 400;
+        font-family: "Varela Round";
+      }
+
+      /* ---navabr--- */
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: white;
+        font-family: "Varela Round";
+      }
+
+      .logo a {
+        float: left;
+        padding: 5px 0;
+        text-decoration: none;
+        color: dodgerblue;
+        font-size: xx-large;
+      }
+
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      nav li {
+        display: inline-block;
+        margin-left: 10%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        position: relative;
+      }
+
+      nav ul li a {
+        color: gray;
+        text-decoration: none;
+        font-size: large;
+      }
+
+      nav a:hover {
+        color: dodgerblue;
+      }
+
+      nav a::after {
+        content: "";
+        display: block;
+        height: 3px;
+        background-color: dodgerblue;
+
+        position: absolute;
+        bottom: 0;
+        width: 0%;
+
+        transition: all ease-in-out 250ms;
+      }
+
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* ---main body --- */
+
+      main {
+        padding: 20px;
+      }
+
+      .create-post {
+        text-decoration: none;
+        color: dodgerblue;
+        font-family: "Varela Round";
+      }
+
+      .create-post:hover {
+        color: darkblue;
+      }
+
+      .post {
+        width: 500px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        font-family: "Varela Round";
+      }
+
+      .container-post {
+        display: flex;
+      }
+
+      .username {
+        font-weight: 1000;
+      }
+
+      .username a {
+        text-decoration: none;
+        color: royalblue;
+      }
+
+      .username a:hover {
+        color: dodgerblue;
+      }
+
+      .time {
+        padding-left: 10px;
+        color: gray;
+        font-weight: 100;
+      }
+
+      .logout-message {
+        width: 500px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: 2px solid red;
+        background-color: #ffdb8c;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        font-family: "Varela Round";
+        color: red;
+      }
+
+      /* ---image--- */
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+
+      /* ---make a post page--- */
+
+      .make-post {
+        font-size: 30px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .make-post-form-div {
+        width: 100%;
+        text-align: center;
+      }
+
+      .make-post-button {
+        background-color: dodgerblue;
+        border: none;
+        color: white;
+        font-family: "Varela Round";
+        font-size: large;
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+
+      .make-post-button:hover {
+        background-color: #1873cc;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    {% include "notTwitter/navbar.html" %} 
-    {%block content %}{% endblock content %} 
+    {% include "notTwitter/navbar.html" %} {%block content %}{% endblock content %}
   </body>
 </html>
