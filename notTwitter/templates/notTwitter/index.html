@@ -1,7 +1,6 @@
 {% extends "notTwitter/base.html" %}
 {% block content %}
 
-<main>
     {% if messages %}
         {% for message in messages %}
             <div class="logout-message">{{ message }}</div>
@@ -22,6 +21,5 @@
     {% endfor %}
 
     {% include "notTwitter/pagination.html" %}
-</main>
 
 {% endblock content %}
