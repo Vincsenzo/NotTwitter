@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <link
       href="https://fonts.googleapis.com/css?family=Varela Round"
       rel="stylesheet"
@@ -31,6 +31,9 @@
       header {
         background-color: white;
         font-family: "Varela Round";
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
       }
 
       .logo a {
@@ -87,6 +90,7 @@
 
       main {
         padding: 20px;
+        padding-top: 70px;
       }
 
       .create-post {
@@ -198,10 +202,16 @@
             width: 90%; /* Adjust width for smaller screens */
             max-width: none; /* Remove maximum width for smaller screens */
         }
+        main {
+          padding-top: 120px;
+        }
     }
     </style>
   </head>
   <body>
-    {% include "notTwitter/navbar.html" %} {%block content %}{% endblock content %}
+    <header>
+      {% include "notTwitter/navbar.html" %}
+    </header>
+     {%block content %}{% endblock content %}
   </body>
 </html>
