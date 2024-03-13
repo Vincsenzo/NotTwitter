@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Varela Round"
       rel="stylesheet"
@@ -12,7 +15,7 @@
       html {
         height: 100%;
       }
-      
+
       body {
         margin: 0;
         background-color: rgb(231, 244, 255);
@@ -197,23 +200,61 @@
         background-color: #1873cc;
         cursor: pointer;
       }
+
       @media screen and (max-width: 600px) {
-        .post, .logout-message{
-            width: 90%; /* Adjust width for smaller screens */
-            max-width: none; /* Remove maximum width for smaller screens */
+        .post,
+        .logout-message {
+          width: 90%; /* Adjust width for smaller screens */
+          max-width: none; /* Remove maximum width for smaller screens */
         }
-        main {
-          padding-top: 120px;
+
+        /* burger navbar on phone */
+
+        .burger {
+          display: none;
+          cursor: pointer;
         }
-    }
+
+        .burger .line {
+          width: 30px;
+          height: 3px;
+          background-color: gray;
+          margin: 3px 0;
+          border-radius: 3px;
+        }
+
+        @media screen and (max-width: 600px) {
+          .nav-links {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            margin-right: 10%;
+          }
+
+          .nav-links.active {
+            display: flex;
+          }
+
+          .burger {
+            display: flex;
+            flex-direction: column; /* Display the lines of the burger icon vertically */
+            justify-content: center; /* Align the burger icon vertically centered */
+            align-items: flex-end; /* Align the burger icon horizontally to the right */
+            padding: 12px;
+          }
+        }
+      }
     </style>
   </head>
   <body>
-    <header>
-      {% include "notTwitter/navbar.html" %}
-    </header>
-    <main>
-     {%block content %}{% endblock content %}
-    </main>
+    <header>{% include "notTwitter/navbar.html" %}</header>
+    <main>{%block content %}{% endblock content %}</main>
+    <script>
+      function toggleMenu() {
+        var navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
