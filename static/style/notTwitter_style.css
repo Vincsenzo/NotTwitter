@@ -1,0 +1,242 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(231, 244, 255);
+  font-weight: 400;
+  font-family: "Varela Round";
+  height: 100%;
+}
+
+span {
+  display: table; 
+  margin: 0 auto;
+}
+
+/* ---navabr--- */
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: white;
+  font-family: "Varela Round";
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo a {
+  float: left;
+  padding: 5px 0;
+  text-decoration: none;
+  color: dodgerblue;
+  font-size: xx-large;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 10%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  position: relative;
+}
+
+nav ul li a {
+  color: gray;
+  text-decoration: none;
+  font-size: large;
+}
+
+nav a:hover {
+  color: dodgerblue;
+}
+
+nav a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: dodgerblue;
+
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---main body --- */
+
+main {
+  padding: 20px;
+  padding-top: 70px;
+}
+
+.create-post {
+  text-decoration: none;
+  color: dodgerblue;
+  font-family: "Varela Round";
+}
+
+.create-post:hover {
+  color: darkblue;
+}
+
+.post {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  font-family: "Varela Round";
+}
+
+.container-post {
+  display: flex;
+}
+
+.username {
+  font-weight: 1000;
+}
+
+.username a {
+  text-decoration: none;
+  color: royalblue;
+}
+
+.username a:hover {
+  color: dodgerblue;
+}
+
+.time {
+  padding-left: 10px;
+  color: gray;
+  font-weight: 100;
+}
+
+.logout-message {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid red;
+  background-color: #ffdb8c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  font-family: "Varela Round";
+  color: red;
+}
+
+/* ---image--- */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/* ---make a post page--- */
+
+.make-post {
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+.make-post-form-div {
+  width: 100%;
+  text-align: center;
+}
+
+.make-post-button {
+  background-color: dodgerblue;
+  border: none;
+  color: white;
+  font-family: "Varela Round";
+  font-size: large;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.make-post-button:hover {
+  background-color: #1873cc;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .post,
+  .logout-message {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: none; /* Remove maximum width for smaller screens */
+  }
+
+  /* burger navbar on phone */
+
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .burger .line {
+    width: 30px;
+    height: 3px;
+    background-color: gray;
+    margin: 3px 0;
+    border-radius: 3px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      margin-right: 10%;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .burger {
+      display: flex;
+      flex-direction: column; /* Display the lines of the burger icon vertically */
+      justify-content: center; /* Align the burger icon vertically centered */
+      align-items: flex-end; /* Align the burger icon horizontally to the right */
+      padding: 12px;
+    }
+
+    nav a::after {
+      display: none;
+    }
+  }
+}
