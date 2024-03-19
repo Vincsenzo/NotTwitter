@@ -1,5 +1,10 @@
 <form method="post">
     {% csrf_token %}
+    {% if user.is_authenticated %}
     <input type="text" placeholder="Type a message..." name="message" autocomplete="off">
     <button type="submit">Send</button>
+    {% else %}
+    <input type="text" placeholder="Plese sign in to send messages" name="message" autocomplete="off">
+    <button type="button">Send</button>
+    {% endif %}
 </form>

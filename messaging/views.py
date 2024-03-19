@@ -5,7 +5,6 @@ from .models import Message
 from .forms import MessageForm
 
 
-@login_required
 def messages(request):
     if request.method == 'POST':
         message_post = request.POST['message']
@@ -20,5 +19,5 @@ def messages(request):
         messages = messages[:66]
 
     current_user = request.user
-    context = {'messages': messages, 'current_user': current_user} #  'form': form,
+    context = {'messages': messages, 'current_user': current_user}
     return render(request, 'messaging/message.html', context)

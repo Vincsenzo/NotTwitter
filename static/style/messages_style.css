@@ -42,7 +42,7 @@ body {
   border-top-left-radius: 20px; /* Rounded corners for input box */
   border-bottom-left-radius: 20px; /* Rounded corners for input box */
 }
-.input-box button[type="submit"] {
+.input-box button {
   padding: 10px 20px;
   background-color: #4caf50;
   color: white;
