@@ -3,12 +3,18 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import environ
+
+env = environ.Env()
+
+environ.Env.read_env()
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8eor^tiw7@+r@l#v1hm7xg3#(9pc!39lkc7@-wu$pd^b*5ulak'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -69,7 +75,7 @@ WSGI_APPLICATION = 'NotTwitter_production.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://nottwitter_user:Lv1Zzr3cNX9GNvR2c3UoIm2ELLyD6PZ5@dpg-cnkv16gcmk4c739e76dg-a.frankfurt-postgres.render.com/nottwitter')
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 }
 
 
